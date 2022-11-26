@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="carouselItem"
+            type="com.teamdagger.epoxysimpleexample.entity.CarouselItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{clickListener}">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/bg_circle_gray"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:maxWidth="224dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@{carouselItem.title}"
+                tools:text="Playing Mini Soccer with Tubagus Hendra Toraja"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="224dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/gray"
+                android:text="@{carouselItem.description}"
+                tools:text="He hopes you could score a goal to your own side LOL. KWKWKWKWK"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
